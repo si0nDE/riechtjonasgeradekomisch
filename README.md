@@ -11,5 +11,5 @@ In einer Konfigurationsdatei können Vorname und Twittername des komisch riechen
 3. Fertig! Besuche jetzt die Seite, klicke auf den Tweet-Button und teile Deinem Freund mit, dass er komisch riecht!
 
 ## Geplante Funktionen ##
-• Spezialtweet (direkt unter der Ausgabe Ja/Nein)
-• Admin-Panel
+- Spezialtweet (direkt unter der Ausgabe Ja/Nein)
+- - Admin-Panel
