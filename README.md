@@ -12,4 +12,4 @@ In einer Konfigurationsdatei können Vorname und Twittername des komisch riechen
 
 ## Geplante Funktionen ##
 - Spezialtweet (direkt unter der Ausgabe Ja/Nein)
-- Admin-Panel
+- - Admin-Panel
