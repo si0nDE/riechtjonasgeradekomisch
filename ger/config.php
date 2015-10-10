@@ -20,8 +20,7 @@
 	
 	$true				=	'JA!';
 	$true_text			=	'du riechst komisch!';
-	$false				=	'Nope';
+	$false				=	'Nope.';
 	$false_text			=	'was ist da los? Du riechst nicht komisch!';	
 	
-	$version			=	'1.0';
-?>
+	$version			=	'1.1';

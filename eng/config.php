@@ -20,8 +20,7 @@
 	
 	$true				=	'YES!';
 	$true_text			=	'you smell very weird!';
-	$false				=	'Nope';
-	$false_text			=	'what´s up? You doesn´t smell weird!';	
+	$false				=	'Nope.';
+	$false_text			=	'what´s up? You don´t smell weird!';
 	
-	$version			=	'1.0';
-?>
+	$version			=	'1.1';
