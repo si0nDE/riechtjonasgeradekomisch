@@ -22,4 +22,4 @@
 	$false				=	'Nope.';
 	$false_text			=	'was ist da los? Du riechst nicht komisch!';	
 	
-	$version			=	'1.1';
+	$version			=	'1.1.1';
