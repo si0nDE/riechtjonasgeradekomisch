@@ -23,28 +23,30 @@ echo $m->render('',$data);
     <form class="form-admin">
         <h2 class="form-admin-heading">{{core.question}}</h2><br>
         <div class="form-group">
-            <label for="core.question">{{admin.question_lable}}</label>
+            <label for="core.question">{{admin.question_label}}</label>
             <input id="core.question" class="form-control" type="text" value="{{core.question}}" pattern="[A-Za-zÄäÖöÜüß+*~#'?!]" required>
         </div>
         <div class="form-group">
-            <label for="core.firstname">{{admin.firstname_lable}}</label>
+            <label for="core.firstname">{{admin.firstname_label}}</label>
             <input id="core.firstname" class="form-control" type="text" value="{{core.firstname}}" required>
         </div>
         <div class="form-group">
-            <label for="core.twitter.nick">{{admin.twitter_lable}}</label>
+            <label for="core.twitter.nick">{{admin.twitter_label}}</label>
             <input id="core.twitter.nick" class="form-control" type="text" value="{{core.twitter.nick}}" required>
         </div>
         <div class="form-group">
-            <label for="core.twitter.owner">{{admin.twitter_owner_lable}}</label>
+            <label for="core.twitter.owner">{{admin.twitter_owner_label}}</label>
             <input id="core.twitter.owner" class="form-control" type="text" value="{{core.twitter.owner}}" required>
         </div>
         <div class="form-group">
-            <label for="core.true.text">{{admin.true_text_lable}}</label>
-            <input id="core.true.text" class="form-control" type="text" value="{{core.true.text}}" pattern="[A-Za-zÄäÖöÜüß+*~#']{6}" required>
+            <label for="core.true.text">{{admin.true_text_label}}</label>
+            <input id="core.true.text" class="form-control" type="text" value="{{core.true.text}}" pattern="[A-Za-zÄäÖöÜüß+*~#']{6}" title="max. 6 {{admin.characters_label}}" required>
         </div>
-        <input id=".twitter.owner" class="form-control" type="text" value="{{core.twitter.owner}}" required>
-
-        <button class="btn btn-lg btn-success btn-block" type="submit"><span class="glyphicon glyphicon-ok"></span>&nbsp;{{admin.btn_lable}}</button>
+        <div class="form-group">
+            <label for="core.true.long">{{admin.true_long_label}}</label>
+            <input id="core.true.long" class="form-control" type="text" value="{{core.true.long}}" pattern="[A-Za-zÄäÖöÜüß+*~#']{50}" required>
+        </div>
+        <button class="btn btn-lg btn-success btn-block" type="submit"><span class="glyphicon glyphicon-ok"></span>&nbsp;{{admin.btn_label}}</button>
     </form>
 </div>
 <script type="application/javascript" src="js/jquery.js"></script>

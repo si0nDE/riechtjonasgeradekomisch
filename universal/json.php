@@ -20,9 +20,10 @@ $array1 = array(
     'version' => '1.5',
     'url' => 'http://riechtjonasgeradekomisch.com',),
     'admin' => array(
-        'question_lable' => 'Question:',
-        'btn_lable' => 'Save',
-        'title' => 'admin@riechtjonasgeradekomisch.com'
+        'question_label' => 'Question:',
+        'btn_label' => 'Save',
+        'title' => 'admin@riechtjonasgeradekomisch.com',
+        'characters_label'
     )
 );
 
