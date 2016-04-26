@@ -23,7 +23,7 @@ include 'config.php';
 		<div id="main"><?php echo $answer;?></div>
 	</body>
 	<footer>
-		Made by <a target="_blank" href="https://twitter.com/simonfieberDE">@simonfieberDE</a><br />
-		<a target="_blank" href="https://github.com/simonfieberDE/riechtjonasgeradekomisch">GitHub Source</a> &middot; v<?php echo $version;?>
+		Made by <a target="_blank" href="https://twitter.com/manchmalfieber">@manchmalfieber</a><br />
+		<a target="_blank" href="https://github.com/si0nDE/riechtjonasgeradekomisch">GitHub Source</a> &middot; v<?php echo $version;?>
 	</footer>
 </html>
