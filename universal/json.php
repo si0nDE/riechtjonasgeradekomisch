@@ -7,7 +7,7 @@
  */
 
 $array = array(
-    'status' => false,
+    'status' => true,
     'question' => 'Does {{firstname}} smell very weird?',
     'firstname' => 'Jonas',
     'twitter' => 'aledjonesworld',
@@ -16,7 +16,8 @@ $array = array(
     'true_long' => 'you smell very weird',
     'false_text' => 'Nope.',
     'false_long' => 'what´s up? You don´t smell weird!',
-    'version' => '1.2'
+    'version' => '1.2',
+    'url' => 'http://riechtjonasgeradekomisch.com'
 );
 $json = json_encode($array);
 file_put_contents('lib/data/content.json', $json);
