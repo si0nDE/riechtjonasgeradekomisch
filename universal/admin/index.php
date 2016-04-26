@@ -26,11 +26,19 @@ echo $m->render('',$data);
         <h2 class="form-admin-heading">{{question}}</h2><br>
         <div class="form-group">
             <label for="question">{{admin.question_lable}}</label>
-            <input name="question" class="form-control" type="text" value="{{question}}" required>
+            <input id="question" class="form-control" type="text" value="{{question}}" required>
         </div>
         <div class="form-group">
             <label for="firstname">{{admin.firstname_lable}}</label>
-            <input name="firstname" class="form-control" type="text" value="{{firstname}}" required>
+            <input id="firstname" class="form-control" type="text" value="{{firstname}}" required>
+        </div>
+        <div class="form-group">
+            <label for="twitter">{{admin.twitter_lable}}</label>
+            <input id="twitter" class="form-control" type="text" value="{{twitter}}" required>
+        </div>
+        <div class="form-group">
+            <label for="twitter_owner">{{admin.twitter_owner_lable}}</label>
+            <input id="twitter_owner" class="form-control" type="text" value="{{twitter_owner}}" required>
         </div>
         <button class="btn btn-lg btn-success btn-block" type="submit"><span class="glyphicon glyphicon-ok"></span>&nbsp;{{admin.btn_lable}}</button>
     </form>

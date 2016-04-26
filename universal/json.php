@@ -4,8 +4,10 @@ $array1 = array(
     'status' => true,
     'question' => 'Does {{firstname}} smell very weird?',
     'firstname' => 'Jonas',
-    'twitter' => 'aledjonesworld',
-    'twitter_owner' => 'simonfieberDE',
+    'twitter' => array(
+        'owner' => 'manchmalfieber',
+        'nick' => 'aledjonesworld'
+    ),
     'true_text' => 'YES!',
     'true_long' => 'you smell very weird',
     'false_text' => 'Nope.',
