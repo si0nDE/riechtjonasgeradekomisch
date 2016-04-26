@@ -2,20 +2,20 @@
 
 $array1 = array(
     'core' => array(
-    'status' => false,
-    'question' => 'Does {{firstname}} smell very weird?',
+    'status' => true,
+    'question' => 'Riecht Jonas gerade komisch?',
     'firstname' => 'Jonas',
     'twitter' => array(
         'owner' => 'manchmalfieber',
         'nick' => 'aledjonesworld'
     ),
         'true' => array(
-            'text' => 'YES!',
-            'long' => 'you smell very weird'
+            'text' => 'JA!',
+            'long' => 'du riechst komisch!'
         ),
         'false' => array(
             'text' => 'Nope.',
-            'long' => 'what´s up? You don´t smell weird!'
+            'long' => 'was ist da los? Du riechst nicht komisch!'
         ),
     'version' => '1.5',
     'url' => 'http://riechtjonasgeradekomisch.com',),

@@ -8,40 +8,46 @@ echo $m->render('',$data);
 //exit;
 ?>
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{admin.title}}</title>
-    <link rel="stylesheet/less" type="text/less" href="css/less/bootstrap.less">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
-    <script>less = { env: 'development'};</script>
-    <script src="../js/less.js"></script>
-    <script>//less.watch();</script>
 </head>
 <body>
 <div class="container">
     <form class="form-admin">
-        <h2 class="form-admin-heading">{{question}}</h2><br>
+        <h2 class="form-admin-heading">{{core.question}}</h2><br>
         <div class="form-group">
-            <label for="question">{{admin.question_lable}}</label>
-            <input id="question" class="form-control" type="text" value="{{question}}" required>
+            <label for="core.question">{{admin.question_lable}}</label>
+            <input id="core.question" class="form-control" type="text" value="{{core.question}}" pattern="[A-Za-zÄäÖöÜüß+*~#'?!]" required>
         </div>
         <div class="form-group">
-            <label for="firstname">{{admin.firstname_lable}}</label>
-            <input id="firstname" class="form-control" type="text" value="{{firstname}}" required>
+            <label for="core.firstname">{{admin.firstname_lable}}</label>
+            <input id="core.firstname" class="form-control" type="text" value="{{core.firstname}}" required>
         </div>
         <div class="form-group">
-            <label for="twitter">{{admin.twitter_lable}}</label>
-            <input id="twitter" class="form-control" type="text" value="{{twitter}}" required>
+            <label for="core.twitter.nick">{{admin.twitter_lable}}</label>
+            <input id="core.twitter.nick" class="form-control" type="text" value="{{core.twitter.nick}}" required>
         </div>
         <div class="form-group">
-            <label for="twitter_owner">{{admin.twitter_owner_lable}}</label>
-            <input id="twitter_owner" class="form-control" type="text" value="{{twitter_owner}}" required>
+            <label for="core.twitter.owner">{{admin.twitter_owner_lable}}</label>
+            <input id="core.twitter.owner" class="form-control" type="text" value="{{core.twitter.owner}}" required>
         </div>
+        <div class="form-group">
+            <label for="core.true.text">{{admin.true_text_lable}}</label>
+            <input id="core.true.text" class="form-control" type="text" value="{{core.true.text}}" pattern="[A-Za-zÄäÖöÜüß+*~#']{6}" required>
+        </div>
+        <input id=".twitter.owner" class="form-control" type="text" value="{{core.twitter.owner}}" required>
+
         <button class="btn btn-lg btn-success btn-block" type="submit"><span class="glyphicon glyphicon-ok"></span>&nbsp;{{admin.btn_lable}}</button>
     </form>
 </div>
+<script type="application/javascript" src="js/jquery.js"></script>
+<script type="application/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
