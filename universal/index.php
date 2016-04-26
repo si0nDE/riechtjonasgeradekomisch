@@ -1,7 +1,6 @@
 <?php
 // get data-core from administrator
-$data = file_get_contents('lib/data/content.json');
-$data = json_decode($data);
+$data = json_decode(file_get_contents('lib/data/content.json'));
 function statusString($input_array) {
  if($input_array->core->status){
      return "true";
