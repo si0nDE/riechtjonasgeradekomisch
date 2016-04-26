@@ -19,8 +19,8 @@ $data = json_decode($data);
 		<div id="top"><?php echo $m->render($data->question,$data) ?></div>
 		<div id="main"><?php if ($data->status){echo $m->render('{{true_text}}', $data);}else{echo $m->render('{{false_text}}', $data);} ?></div>
 		<footer>
-			Made by <a target="_blank" href="https://twitter.com/simonfieberDE">@simonfieberDE</a><br />
-			<a target="_blank" href="https://github.com/simonfieberDE/riechtjonasgeradekomisch">GitHub Source</a> &middot; <?php echo $m->render('v{{version}}',$data)?>
+			Made by <a target="_blank" href="https://twitter.com/manchmalfieber">@manchmalfieber</a><br />
+			<a target="_blank" href="https://github.com/si0nDE/riechtjonasgeradekomisch">GitHub Source</a> &middot; <?php echo $m->render('v{{version}}',$data)?>
 		</footer>
 	</body>
 </html>
