@@ -1,19 +1,24 @@
 ﻿<?php
 
 $array1 = array(
-    'status' => true,
+    'core' => array(
+    'status' => false,
     'question' => 'Does {{firstname}} smell very weird?',
     'firstname' => 'Jonas',
     'twitter' => array(
         'owner' => 'manchmalfieber',
         'nick' => 'aledjonesworld'
     ),
-    'true_text' => 'YES!',
-    'true_long' => 'you smell very weird',
-    'false_text' => 'Nope.',
-    'false_long' => 'what´s up? You don´t smell weird!',
-    'version' => '1.2',
-    'url' => 'http://riechtjonasgeradekomisch.com',
+        'true' => array(
+            'text' => 'YES!',
+            'long' => 'you smell very weird'
+        ),
+        'false' => array(
+            'text' => 'Nope.',
+            'long' => 'what´s up? You don´t smell weird!'
+        ),
+    'version' => '1.5',
+    'url' => 'http://riechtjonasgeradekomisch.com',),
     'admin' => array(
         'question_lable' => 'Question:',
         'btn_lable' => 'Save',
