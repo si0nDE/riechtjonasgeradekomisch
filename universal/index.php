@@ -15,5 +15,4 @@ Mustache_Autoloader::register();
 $m = new Mustache_Engine(array(
     'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/lib/views',array('extension' => '.html'))
 ));
-echo $m->render($template, $data)
-?>
+echo $m->render($template, $data);

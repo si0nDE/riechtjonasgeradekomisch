@@ -40,3 +40,4 @@ $json = json_encode($array1);
 file_put_contents('lib/data/content.json', $json);
 echo "Done: 1\n";
 echo "STOP";
+exit;

@@ -17,4 +17,4 @@ if (isset($_SESSION['success'])){
 }
 echo $m->render('admin', $data);
 session_destroy();
-?>
+exit;
