@@ -38,7 +38,8 @@ if (!empty($_POST)){
             'false_long_label' => 'Text für Tweet, wenn nicht zutreffend:',
             'url_label' => 'Domain für Tweet (z.B. http://riechtjonasgeradekomisch.com)',
             'save_label' => 'Daten erfolgreich gespeichert!',
-            'status_label' => 'Status-Anzeige:'
+            'status_label' => 'Status-Anzeige:',
+            'button_label' => 'Bearbeiten'
         )
     );
     $json = json_encode($array);

@@ -1,5 +1,5 @@
 <?php
-setcookie('admin','yes', time() + (60*30));
+setcookie('admin','yes', time() + (60*30), '/');
 session_start();
 require_once '../lib/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
