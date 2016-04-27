@@ -1,8 +1,13 @@
 <?php
 if (!empty($_POST)){
+    if ($_POST['core_status'] === 'true'){
+        $status = true;
+    }else{
+        $status = false;
+    }
     $array = array(
         'core' => array(
-            'status' => true,
+            'status' => $status,
             'question' => $_POST['core_question'],
             'firstname' => $_POST['core_firstname'],
             'twitter' => array(
@@ -22,6 +27,7 @@ if (!empty($_POST)){
         'admin' => array(
             'question_label' => 'Frage:',
             'btn_label' => 'Speichern',
+            'btn_back_label' => 'Zurück',
             'title' => 'admin@riechtjonasgeradekomisch.com',
             'firstname_label' => 'Vorname:',
             'twitter_label' => 'Twitter-Benutzername (ohne @):',
@@ -31,7 +37,8 @@ if (!empty($_POST)){
             'false_text_label' => 'Kurze Antwort, wenn nicht zutreffend:',
             'false_long_label' => 'Text für Tweet, wenn nicht zutreffend:',
             'url_label' => 'Domain für Tweet (z.B. http://riechtjonasgeradekomisch.com)',
-            'save_label' => 'Daten gespeichert'
+            'save_label' => 'Daten erfolgreich gespeichert!',
+            'status_label' => 'Status-Anzeige:'
         )
     );
     $json = json_encode($array);
@@ -46,7 +53,7 @@ if (!empty($_POST)){
     }else{
         session_start();
         $_SESSION['success'] = true;
-        header('Location: index.php');
+        header('Location: ./');
         exit;
     }
 }else{

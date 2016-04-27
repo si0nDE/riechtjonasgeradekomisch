@@ -1,4 +1,5 @@
 <?php
+setcookie('admin','yes', time() + (60*30));
 session_start();
 require_once '../lib/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
@@ -14,6 +15,11 @@ if (isset($_SESSION['error'])){
 if (isset($_SESSION['success'])){
     if ($_SESSION['success']){
     $data->admin->save = true;}
+}
+if ($data->core->status === true){
+    $data->admin->select_on = true;
+}else {
+    $data->admin->select_off = true;
 }
 echo $m->render('admin', $data);
 session_destroy();
