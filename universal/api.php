@@ -18,27 +18,32 @@ if (isset($_GET['format'])){
     if ($_GET['format'] === 'xml'){
         $data = file_get_contents('lib/data/content.json');
         $data = json_decode($data, true);
-        $core = $data['core'];
-        if ($core['status'] === true){
-            $core['status'] = 'true';
+        $data_export = $data['core'];
+        if ($data_export['status']){
+            $data_export['status'] = 'true';
         }else{
-            $core['status'] = 'false';
+            $data_export['status'] = 'false';
         }
-        $array = array(
-            'code' => '1337',
-            'msg' => 'Everything working fine, thank you for asking.',
-            'core' => $core,
-            'api' => array(
-                'version' => '0.1'
-            )
-        );
-        $root = $core['url'];
-        $root = preg_replace('#^https?://#', '', $root);
-        $xml = new SimpleXMLElement("<".$root."/>");
-        array_flip($array);
-        array_walk_recursive($array, array($xml, 'addChild'));
+        $root = preg_replace('#^https?://#', '', $data_export['url']);
+        function array_to_xml($array, &$xml_vars) {
+            foreach($array as $key => $value) {
+                if(is_array($value)) {
+                    if(!is_numeric($key)){
+                        $subnode = $xml_vars->addChild("$key");
+                        array_to_xml($value, $subnode);
+                    }else{
+                        $subnode = $xml_vars->addChild("item$key");
+                        array_to_xml($value, $subnode);
+                    }
+                }else {
+                    $xml_vars->addChild("$key",htmlspecialchars("$value"));
+                }
+            }
+        }
+        $xml_vars = new SimpleXMLElement("<?xml version=\"1.0\"?><".$root."></".$root.">");
+        array_to_xml($data_export, $xml_vars);
         header('Content-Type: application/xml');
-        print $xml->asXML();
+        echo $xml_vars->asXML();
     }else{
         default_out();
     }

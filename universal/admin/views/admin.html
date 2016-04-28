@@ -51,6 +51,10 @@
             <label for="core.url">{{admin.url_label}}</label>
             <input id="core.url" name="core_url" class="form-control" type="text" value="{{core.url}}" required>
         </div>
+        {{# admin.show_template}}<div class="form-group">
+            <label for="admin.template">{{admin.template_label}}</label>
+            <input id="admin.template" name="admin_template" class="form-control" type="text" value="{{admin.template}}" required>
+        </div>{{/ admin.show_template}}
         <div class="form-group">
             <label for="core.status">{{admin.status_label}}</label>
             <select class="form-control" id="core.status" name="core_status">

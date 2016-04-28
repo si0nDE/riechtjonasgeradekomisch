@@ -39,7 +39,9 @@ if (!empty($_POST)){
             'url_label' => 'Domain für Tweet (z.B. http://riechtjonasgeradekomisch.com)',
             'save_label' => 'Daten erfolgreich gespeichert!',
             'status_label' => 'Status-Anzeige:',
-            'button_label' => 'Bearbeiten'
+            'button_label' => 'Bearbeiten',
+            'template_label' => 'Template-Datei (ohne Dateiendung)',
+            'template' => $_POST['admin_template']
         )
     );
     $json = json_encode($array);

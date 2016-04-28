@@ -1,23 +1,22 @@
 <?php
 // get data-core from administrator
 $data = json_decode(file_get_contents('lib/data/content.json'));
-// workaround for status string
-function statusString($input_array) {
- if($input_array->core->status){
-     return "true";
- }else{
-     return "false";
- }
+// set status
+if ($data->core->status){
+    $data->core->answer = $data->core->true->text;
+    $data->core->twitter->long = $data->core->true->long;
+}else{
+    $data->core->answer = $data->core->false->text;
+    $data->core->twitter->long = $data->core->false->long;
 }
-// see if we got an authorized person surfing the web
-if (!empty($_COOKIE['admin'])){
+// see if an authorized person is visiting
+if (isset($_COOKIE['admin'])){
     $data->admin->button = true;
-}
-$template = statusString($data);
-// get Mustache-Engine ready
+};
+// call the power of mustaches
 require_once 'lib/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
 $m = new Mustache_Engine(array(
     'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/lib/views',array('extension' => '.html'))
 ));
-echo $m->render($template, $data);
+echo $m->render($data->admin->template, $data);

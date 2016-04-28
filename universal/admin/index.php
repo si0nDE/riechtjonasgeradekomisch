@@ -21,6 +21,18 @@ if ($data->core->status === true){
 }else {
     $data->admin->select_off = true;
 }
+function scan_for_themes(){
+    $directory = '../lib/views';
+    $scanned_directory = array_diff(scandir($directory), array('..', '.'));
+    if (count($scanned_directory) >= 2){
+        return true;
+    }else{
+        return false;
+    }
+}
+if (scan_for_themes()){
+    $data->admin->show_template = true;
+}
 echo $m->render('admin', $data);
 session_destroy();
 exit;
