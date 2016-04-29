@@ -1,4 +1,12 @@
 <?php
+function admin_template()
+{
+    if (!empty($_POST['admin_template'])) {
+        return $_POST['admin_template'];
+    } else {
+        return 'default';
+    }
+}
 if (!empty($_POST)) {
     if ($_POST['core_status'] === 'true') {
         $status = true;
@@ -41,7 +49,7 @@ if (!empty($_POST)) {
             'status_label' => 'Status-Anzeige:',
             'button_label' => 'Bearbeiten',
             'template_label' => 'Template-Datei (ohne Dateiendung)',
-            'template' => $_POST['admin_template']
+            'template' => admin_template()
         )
     );
     $json = json_encode($array);

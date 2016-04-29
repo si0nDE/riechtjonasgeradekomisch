@@ -48,6 +48,14 @@ if (isset($_GET['format'])) {
         array_to_xml($data_export, $xml_vars);
         header('Content-Type: application/xml');
         echo $xml_vars->asXML();
+    } elseif ($_GET['format'] === 'beer') {
+        $data = file_get_contents('lib/data/content.json');
+        $data = json_decode($data);
+        $data = $data->core;
+        $data = json_encode($data);
+        include 'lib/data/beer.php';
+        header('Content-Type: text/plain Charset=UTF-8');
+        echo beer($data);
     } else {
         default_out();
     }
