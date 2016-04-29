@@ -45,7 +45,7 @@ if (!empty($_POST)) {
         )
     );
     $json = json_encode($array);
-    $save = file_put_contents('../lib/_data/content.json', $json);
+    $save = file_put_contents('../lib/data/content.json', $json);
     if ($save === false) {
         session_start();
         $error = error_get_last();
