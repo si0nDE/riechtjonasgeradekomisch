@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>admin@{{core.url}}</title>
+    <title>{{admin.title}}</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="css/admin.css">
@@ -13,7 +13,7 @@
 <div class="container">
     <form class="form-admin" action="save.php" method="post">
         {{# admin.save}}<p class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> {{admin.save_label}}</p>{{/ admin.save}}
-        {{# admin.error}}<p class="alert alert-error"><span class="gylphicon gylphicon-remove"></span> {{{admin.error_msg}}}</p>{{/ admin.error}}
+        {{# admin.error}}<p class="alert alert-danger"><span class="gylphicon gylphicon-remove"></span> {{{admin.error_msg}}}</p>{{/ admin.error}}
         <h2 class="form-admin-heading">{{core.question}} <small>&dash;Admin</small></h2><br>
         <div class="form-group">
             <label for="core.question">{{admin.question_label}}</label>

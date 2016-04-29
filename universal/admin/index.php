@@ -33,6 +33,7 @@ function scan_for_themes(){
 if (scan_for_themes()){
     $data->admin->show_template = true;
 }
+$data->admin->title = "admin@".preg_replace('#^https?://#', '', $data->core->url);
 echo $m->render('admin', $data);
 session_destroy();
 exit;

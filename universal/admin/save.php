@@ -45,13 +45,13 @@ if (!empty($_POST)){
         )
     );
     $json = json_encode($array);
-    $save = file_put_contents('../lib/data/content.json', $json);
+    $save = file_put_contents('../lib/_data/content.json', $json);
     if ($save === false) {
         session_start();
         $error = error_get_last();
-        $_SESSION['error'];
+        $_SESSION['error'] = true;
         $_SESSION['error_msg'] = "Code <b>".$error['type']."</b>: Error in line <b>".$error['line']."</b>!<br>Message: ".$error['message'];
-        header('Location: index.php');
+        header('Location: ./');
         exit(1);
     }else{
         session_start();
@@ -62,8 +62,8 @@ if (!empty($_POST)){
 }else{
     session_start();
     $error = error_get_last();
-    $_SESSION['error'];
+    $_SESSION['error'] = true;
     $_SESSION['error_msg'] = "Code <b>".$error['type']."</b>: Error in line <b>".$error['line']."</b>!<br>Message: ".$error['message'];
-    header('Location: index.php');
+    header('Location: ./');
     exit(1);
 }
