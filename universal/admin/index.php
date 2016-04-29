@@ -1,12 +1,19 @@
 <?php
+$data = json_decode(file_get_contents('../lib/data/content.json'));
 setcookie('admin', 'yes', time() + (60 * 30), '/');
+if (empty($data)) {
+    include 'default.php';
+    if (write_default()) {
+        header('Location: ./');
+    }
+}
 session_start();
 require_once '../lib/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
 $m = new Mustache_Engine(array(
     'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/views', array('extension' => '.html'))
 ));
-$data = json_decode(file_get_contents('../lib/data/content.json'));
+
 if (isset($_SESSION['error'])) {
     if ($_SESSION['error']) {
         $data->admin->error = true;

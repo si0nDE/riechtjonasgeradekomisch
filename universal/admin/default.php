@@ -1,0 +1,7 @@
+<?php
+function write_default()
+{
+    $data = '{"core":{"status":true,"question":"Riecht Jonas gerade komisch?","firstname":"Jonas","twitter":{"owner":"manchmalfieber","nick":"aledjonesworld"},"true":{"text":"JA!","long":"du riechst komisch!"},"false":{"text":"Nope.","long":"was ist da los? Du riechst nicht komisch!"},"url":"http:\/\/riechtjonasgeradekomisch.com","version":"1.5.1"},"admin":{"question_label":"Frage:","btn_label":"Speichern","btn_back_label":"Zur\u00fcck","title":"admin@riechtjonasgeradekomisch.com","firstname_label":"Vorname:","twitter_label":"Twitter-Benutzername (ohne @):","twitter_owner_label":"Twitter-Benutzername von dir (ohne @):","true_text_label":"Kurze Antwort, wenn zutreffend:","true_long_label":"Text f\u00fcr Tweet, wenn zutreffend:","false_text_label":"Kurze Antwort, wenn nicht zutreffend:","false_long_label":"Text f\u00fcr Tweet, wenn nicht zutreffend:","url_label":"Domain f\u00fcr Tweet (z.B. http:\/\/riechtjonasgeradekomisch.com)","save_label":"Daten erfolgreich gespeichert!","status_label":"Status-Anzeige:","button_label":"Bearbeiten","template_label":"Template-Datei (ohne Dateiendung)","template":"default"}}';
+    file_put_contents('../lib/data/content.json', $data);
+    return true;
+}
