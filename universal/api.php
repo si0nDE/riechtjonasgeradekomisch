@@ -1,6 +1,7 @@
 <?php
 // API - for whatever dumb reason we need to have something like that
-function default_out(){
+function default_out()
+{
     $data = file_get_contents('lib/data/content.json');
     $data = json_decode($data);
     $array = array(
@@ -14,39 +15,42 @@ function default_out(){
     header('Content-Type: application/json');
     echo json_encode($array);
 }
-if (isset($_GET['format'])){
-    if ($_GET['format'] === 'xml'){
+
+if (isset($_GET['format'])) {
+    if ($_GET['format'] === 'xml') {
         $data = file_get_contents('lib/data/content.json');
         $data = json_decode($data, true);
         $data_export = $data['core'];
-        if ($data_export['status']){
+        if ($data_export['status']) {
             $data_export['status'] = 'true';
-        }else{
+        } else {
             $data_export['status'] = 'false';
         }
         $root = preg_replace('#^https?://#', '', $data_export['url']);
-        function array_to_xml($array, &$xml_vars) {
-            foreach($array as $key => $value) {
-                if(is_array($value)) {
-                    if(!is_numeric($key)){
+        function array_to_xml($array, &$xml_vars)
+        {
+            foreach ($array as $key => $value) {
+                if (is_array($value)) {
+                    if (!is_numeric($key)) {
                         $subnode = $xml_vars->addChild("$key");
                         array_to_xml($value, $subnode);
-                    }else{
+                    } else {
                         $subnode = $xml_vars->addChild("item$key");
                         array_to_xml($value, $subnode);
                     }
-                }else {
-                    $xml_vars->addChild("$key",htmlspecialchars("$value"));
+                } else {
+                    $xml_vars->addChild("$key", htmlspecialchars("$value"));
                 }
             }
         }
-        $xml_vars = new SimpleXMLElement("<?xml version=\"1.0\"?><".$root."></".$root.">");
+
+        $xml_vars = new SimpleXMLElement("<?xml version=\"1.0\"?><" . $root . "></" . $root . ">");
         array_to_xml($data_export, $xml_vars);
         header('Content-Type: application/xml');
         echo $xml_vars->asXML();
-    }else{
+    } else {
         default_out();
     }
-}else{
+} else {
     default_out();
 }

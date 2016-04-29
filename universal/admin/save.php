@@ -1,8 +1,8 @@
 <?php
-if (!empty($_POST)){
-    if ($_POST['core_status'] === 'true'){
+if (!empty($_POST)) {
+    if ($_POST['core_status'] === 'true') {
         $status = true;
-    }else{
+    } else {
         $status = false;
     }
     $array = array(
@@ -50,20 +50,20 @@ if (!empty($_POST)){
         session_start();
         $error = error_get_last();
         $_SESSION['error'] = true;
-        $_SESSION['error_msg'] = "Code <b>".$error['type']."</b>: Error in line <b>".$error['line']."</b>!<br>Message: ".$error['message'];
+        $_SESSION['error_msg'] = "Code <b>" . $error['type'] . "</b>: Error in line <b>" . $error['line'] . "</b>!<br>Message: " . $error['message'];
         header('Location: ./');
         exit(1);
-    }else{
+    } else {
         session_start();
         $_SESSION['success'] = true;
         header('Location: ./');
         exit;
     }
-}else{
+} else {
     session_start();
     $error = error_get_last();
     $_SESSION['error'] = true;
-    $_SESSION['error_msg'] = "Code <b>".$error['type']."</b>: Error in line <b>".$error['line']."</b>!<br>Message: ".$error['message'];
+    $_SESSION['error_msg'] = "Code <b>" . $error['type'] . "</b>: Error in line <b>" . $error['line'] . "</b>!<br>Message: " . $error['message'];
     header('Location: ./');
     exit(1);
 }

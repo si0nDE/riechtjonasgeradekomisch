@@ -12,69 +12,91 @@
 <body>
 <div class="container">
     <form class="form-admin" action="save.php" method="post">
-        {{# admin.save}}<p class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> {{admin.save_label}}</p>{{/ admin.save}}
-        {{# admin.error}}<p class="alert alert-danger"><span class="gylphicon gylphicon-remove"></span> {{{admin.error_msg}}}</p>{{/ admin.error}}
-        <h2 class="form-admin-heading">{{core.question}} <small>&dash;Admin</small></h2><br>
+        {{# admin.save}}<p class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> {{admin.save_label}}
+    </p>{{/ admin.save}}
+        {{# admin.error}}<p class="alert alert-danger"><span class="gylphicon gylphicon-remove"></span>
+        {{{admin.error_msg}}}</p>{{/ admin.error}}
+        <h2 class="form-admin-heading">{{core.question}}
+            <small>&dash;Admin</small>
+        </h2>
+        <br>
         <div class="form-group">
             <label for="core.question">{{admin.question_label}}</label>
-            <input id="core.question" name="core_question" class="form-control" type="text" value="{{core.question}}" required>
+            <input id="core.question" name="core_question" class="form-control" type="text" value="{{core.question}}"
+                   required>
         </div>
         <div class="form-group">
             <label for="core.firstname">{{admin.firstname_label}}</label>
-            <input id="core.firstname" name="core_firstname" class="form-control" type="text" value="{{core.firstname}}" required>
+            <input id="core.firstname" name="core_firstname" class="form-control" type="text" value="{{core.firstname}}"
+                   required>
         </div>
         <div class="form-group">
             <label for="core.twitter.nick">{{admin.twitter_label}}</label>
-            <input id="core.twitter.nick" name="core_twitter_nick" class="form-control" type="text" value="{{core.twitter.nick}}" required>
+            <input id="core.twitter.nick" name="core_twitter_nick" class="form-control" type="text"
+                   value="{{core.twitter.nick}}" required>
         </div>
         <div class="form-group">
             <label for="core.twitter.owner">{{admin.twitter_owner_label}}</label>
-            <input id="core.twitter.owner" name="core_twitter_owner" class="form-control" type="text" value="{{core.twitter.owner}}" required>
+            <input id="core.twitter.owner" name="core_twitter_owner" class="form-control" type="text"
+                   value="{{core.twitter.owner}}" required>
         </div>
         <div class="form-group has-success">
             <label for="core.true.text">{{admin.true_text_label}}</label>
-            <input id="core.true.text" name="core_true_text" class="form-control" type="text" value="{{core.true.text}}" required>
+            <input id="core.true.text" name="core_true_text" class="form-control" type="text" value="{{core.true.text}}"
+                   required>
         </div>
         <div class="form-group has-success">
             <label for="core.true.long">{{admin.true_long_label}}</label>
-            <input id="core.true.long" name="core_true_long" class="form-control" type="text" value="{{core.true.long}}" required>
+            <input id="core.true.long" name="core_true_long" class="form-control" type="text" value="{{core.true.long}}"
+                   required>
         </div>
         <div class="form-group has-error">
             <label for="core.false.text">{{admin.false_text_label}}</label>
-            <input id="core.false.text" name="core_false_text" class="form-control" type="text" value="{{core.false.text}}" required>
+            <input id="core.false.text" name="core_false_text" class="form-control" type="text"
+                   value="{{core.false.text}}" required>
         </div>
         <div class="form-group has-error">
             <label for="core.false.long">{{admin.false_long_label}}</label>
-            <input id="core.false.long" name="core_false_long" class="form-control" type="text" value="{{core.false.long}}" required>
+            <input id="core.false.long" name="core_false_long" class="form-control" type="text"
+                   value="{{core.false.long}}" required>
         </div>
         <div class="form-group">
             <label for="core.url">{{admin.url_label}}</label>
             <input id="core.url" name="core_url" class="form-control" type="text" value="{{core.url}}" required>
         </div>
-        {{# admin.show_template}}<div class="form-group">
+        {{# admin.show_template}}
+        <div class="form-group">
             <label for="admin.template">{{admin.template_label}}</label>
-            <input id="admin.template" name="admin_template" class="form-control" type="text" value="{{admin.template}}" required>
-        </div>{{/ admin.show_template}}
+            <input id="admin.template" name="admin_template" class="form-control" type="text" value="{{admin.template}}"
+                   required>
+        </div>
+        {{/ admin.show_template}}
         <div class="form-group">
             <label for="core.status">{{admin.status_label}}</label>
             <select class="form-control" id="core.status" name="core_status">
-                {{# admin.select_on }}<option value="true" selected>
+                {{# admin.select_on }}
+                <option value="true" selected>
                     {{core.true.text}}
                 </option>
                 <option value="false">
                     {{core.false.text}}
-                </option>{{/ admin.select_on }}
-                {{# admin.select_off }}<option value="true">
-                {{core.true.text}}
-            </option>
+                </option>
+                {{/ admin.select_on }}
+                {{# admin.select_off }}
+                <option value="true">
+                    {{core.true.text}}
+                </option>
                 <option value="false" selected>
                     {{core.false.text}}
-                </option>{{/ admin.select_off }}
+                </option>
+                {{/ admin.select_off }}
             </select>
         </div>
-        <button class="btn btn-lg btn-success " type="submit"><span class="glyphicon glyphicon-floppy-save"></span>&nbsp;{{admin.btn_label}}</button>
-        </form>
-    <a class="btn btn-lg btn-primary" onclick="location.href='../'"><span class="glyphicon glyphicon-arrow-left"></span> {{admin.btn_back_label}}</a>
+        <button class="btn btn-lg btn-success " type="submit"><span class="glyphicon glyphicon-floppy-save"></span>&nbsp;{{admin.btn_label}}
+        </button>
+    </form>
+    <a class="btn btn-lg btn-primary" onclick="location.href='../'"><span class="glyphicon glyphicon-arrow-left"></span>
+        {{admin.btn_back_label}}</a>
 </div>
 <script type="application/javascript" src="js/jquery.js"></script>
 <script type="application/javascript" src="js/bootstrap.min.js"></script>
