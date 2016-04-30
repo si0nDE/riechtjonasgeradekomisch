@@ -1,0 +1,8 @@
+# DEFAULT RULE SET
+# AuthUserFile /path/to/.htpasswd
+# AuthType Basic
+# AuthName "You shall not pass!"
+# Require valid-user
+# -- Please enable protection for this folder! --
+
+Options -Indexes
