@@ -6,19 +6,7 @@
     <title>{{core.question}}</title>
 </head>
 <body>
-<div id="tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-url="{{core.url}}"
-                   data-text="Yo {{core.firstname}}, {{core.twitter.long}} (@{{core.twitter.nick}})"
-                   data-via="{{core.twitter.owner}}" data-size="large">Tweet</a>
-    <script>!function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + '://platform.twitter.com/widgets.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, 'script', 'twitter-wjs');</script>
-</div>
+<div id="tweet"></div>
 <div id="top">{{core.question}}</div>
 <div id="main">{{core.answer}}</div>
 <div id="tweetembedded"></div>
@@ -29,19 +17,31 @@
     {{# admin.button }}<p><a href="admin/">{{admin.button_label}}</a></p>{{/ admin.button }}
 </footer>
 </body>
-</html>
+
+
+<script src="https://platform.twitter.com/widgets.js"></script>
+
+<script>
+    options = {
+        text: 'Yo {{core.firstname}}, {{core.twitter.long}} (@{{core.twitter.nick}})',
+        via: '{{core.twitter.owner}}',
+        size: 'large',
+        lang: 'de',
+    };
+
+    twttr.widgets.createShareButton('{{core.url}}', document.getElementById('tweet'), options);
+</script>
 
 {{#core.tweetid}}
-    <script src="https://platform.twitter.com/widgets.js"></script>
     <script>
+        options = {
+            theme: 'light',
+            align: 'center',
+            lang: 'de'
+        };
 
-        twttr.widgets.createTweet(
-                '{{core.tweetid}}',
-                document.getElementById('tweetembedded'),
-                {
-                    theme: 'light',
-                    align: 'center'
-                }
-        );
+        twttr.widgets.createTweet('{{core.tweetid}}', document.getElementById('tweetembedded'), options);
     </script>
 {{/core.tweetid}}
+
+</html>
