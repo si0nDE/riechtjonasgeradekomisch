@@ -30,6 +30,7 @@ if (!empty($_POST)) {
                 'text' => $_POST['core_false_text'],
                 'long' => $_POST['core_false_long']
             ),
+            'tweetid' => $_POST['core_tweetid'] == "" ? false : $_POST['core_tweetid'],
             'url' => $_POST['core_url'],
             'version' => '1.5.1'),
         'admin' => array(
@@ -44,6 +45,7 @@ if (!empty($_POST)) {
             'true_long_label' => 'Text für Tweet, wenn zutreffend:',
             'false_text_label' => 'Kurze Antwort, wenn nicht zutreffend:',
             'false_long_label' => 'Text für Tweet, wenn nicht zutreffend:',
+            'tweet_id_label' => "Tweet-ID für Embedded Tweet (leer zum Ausblenden)",
             'url_label' => 'Domain für Tweet (z.B. http://riechtjonasgeradekomisch.com)',
             'save_label' => 'Daten erfolgreich gespeichert!',
             'status_label' => 'Status-Anzeige:',

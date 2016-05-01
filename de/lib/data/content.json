@@ -15,6 +15,7 @@
       "text": "Nope.",
       "long": "was ist da los? Du riechst nicht komisch!"
     },
+    "tweetid": false,
     "url": "http:\/\/riechtjonasgeradekomisch.com",
     "version": "1.5.1"
   },
@@ -30,6 +31,7 @@
     "true_long_label": "Text f\u00fcr Tweet, wenn zutreffend:",
     "false_text_label": "Kurze Antwort, wenn nicht zutreffend:",
     "false_long_label": "Text f\u00fcr Tweet, wenn nicht zutreffend:",
+    "tweet_id_label": "Tweet-ID f\u00fcr Embedded Tweet (leer zum Ausblenden)",
     "url_label": "Domain f\u00fcr Tweet (z.B. http:\/\/riechtjonasgeradekomisch.com)",
     "save_label": "Daten erfolgreich gespeichert!",
     "status_label": "Status-Anzeige:",
