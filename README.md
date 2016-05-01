@@ -1,5 +1,4 @@
 riechtjonasgeradekomisch
-
 ========================
 
 Das Projekt *riechtjonasgeradekomisch* ist ein Spaßprojekt um seinem Freund (in meinem Falle Jonas) über Twitter mitzuteilen, dass er komisch riecht.
