@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{language.language_code}}">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link href="./css/main.css" type="text/css" rel="stylesheet">
@@ -20,30 +20,6 @@
 </footer>
 </body>
 
-
-<script src="https://platform.twitter.com/widgets.js"></script>
-
-<script>
-    options = {
-        text: 'Yo {{core.firstname}}, {{core.twitter.long}} (@{{core.twitter.nick}})',
-        via: '{{core.twitter.owner}}',
-        size: 'large',
-        lang: 'en',
-    };
-
-    twttr.widgets.createShareButton('{{core.url}}', document.getElementById('tweet'), options);
-</script>
-
-{{#core.tweetid}}
-    <script>
-        options = {
-            theme: '{{admin.tweet_theme}}',
-            align: 'center',
-            lang: 'en'
-        };
-
-        twttr.widgets.createTweet('{{core.tweetid}}', document.getElementById('tweetembedded'), options);
-    </script>
-{{/core.tweetid}}
+{{> scripts.default}}
 
 </html>

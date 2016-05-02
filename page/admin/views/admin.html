@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="{{language.language_code}}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,22 +68,12 @@
         <div class="form-group">
             <label for="admin.tweet_theme">{{language.admin.tweet_theme_label}}</label>
             <select class="form-control" id="admin.tweet_theme" name="admin_tweet_theme">
-                {{# admin.tweet_theme_light }}
-                    <option value="light" selected>
-                        light
-                    </option>
-                    <option value="dark">
-                        dark
-                    </option>
-                {{/ admin.tweet_theme_light }}
-                {{# admin.tweet_theme_dark }}
-                    <option value="light">
-                        light
-                    </option>
-                    <option value="dark" selected>
-                        dark
-                    </option>
-                {{/ admin.tweet_theme_dark }}
+                <option value="light" {{ admin.tweet_theme_light }}>
+                    light
+                </option>
+                <option value="dark" {{ admin.tweet_theme_dark }}>
+                    dark
+                </option>
             </select>
         </div>
         <div class="form-group">

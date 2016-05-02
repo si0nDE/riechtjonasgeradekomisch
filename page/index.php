@@ -31,6 +31,7 @@ if (isset($_COOKIE['admin'])) {
 require_once 'lib/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
 $m = new Mustache_Engine(array(
-    'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/lib/views', array('extension' => '.html'))
+    'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/lib/views', array('extension' => '.html')),
+    'partials_loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/lib/views/subviews', array('extension' => '.html'))
 ));
 echo $m->render($data->admin->template, $data);

@@ -2,11 +2,11 @@
 $data = json_decode(file_get_contents('../lib/data/content.json'));
 
 $langcode = $data->admin->lang;
-if(file_exists('../lib/data/lang/'.$langcode.'.json')) {
-    $lang = json_decode(file_get_contents('../lib/data/lang/'.$langcode.'.json'));
+if (file_exists('../lib/data/lang/' . $langcode . '.json')) {
+    $lang = json_decode(file_get_contents('../lib/data/lang/' . $langcode . '.json'));
 }
 
-if(!isset($lang)) {
+if (!isset($lang)) {
     // TODO: error language file not found
 }
 
@@ -43,9 +43,9 @@ if ($data->core->status === true) {
     $data->admin->select_off = true;
 }
 if ($data->admin->tweet_theme == 'dark') {
-    $data->admin->tweet_theme_dark = true;
+    $data->admin->tweet_theme_dark = "selected";
 } else {
-    $data->admin->tweet_theme_light = true;
+    $data->admin->tweet_theme_light = "selected";
 }
 function scan_for_themes()
 {
@@ -58,7 +58,8 @@ function scan_for_themes()
     }
 }
 
-function scan_for_languages(){
+function scan_for_languages()
+{
     $directory = '../lib/data/lang';
     $scanned_directory = array_diff(scandir($directory), array('..', '.'));
     if (count($scanned_directory) >= 2) {
@@ -72,7 +73,7 @@ if (scan_for_themes()) {
     $data->admin->show_template = true;
 }
 
-if(scan_for_languages()) {
+if (scan_for_languages()) {
     $data->admin->show_language = true;
 }
 
