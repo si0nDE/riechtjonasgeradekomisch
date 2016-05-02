@@ -33,7 +33,7 @@ if (!empty($_POST)) {
             ),
             'tweetid' => $_POST['core_tweetid'] == "" ? false : $_POST['core_tweetid'],
             'url' => $_POST['core_url'],
-            'version' => '1.6'),
+            'version' => '1.6.1'),
         'admin' => array(
             'question_label' => 'Frage:',
             'btn_label' => 'Speichern',

@@ -33,7 +33,7 @@ if (!empty($_POST)) {
                 'long' => $_POST['core_false_long']
             ),
             'url' => $_POST['core_url'],
-            'version' => '1.6'),
+            'version' => '1.6.1'),
         'admin' => array(
             'question_label' => 'Question:',
             'btn_label' => 'Save',
