@@ -13,9 +13,9 @@
 <div class="container">
     <form class="form-admin" action="save.php" method="post">
         {{# admin.save}}<p class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> {{admin.save_label}}
-        </p>{{/ admin.save}}
+    </p>{{/ admin.save}}
         {{# admin.error}}<p class="alert alert-danger"><span class="gylphicon gylphicon-remove"></span>
-            {{{admin.error_msg}}}</p>{{/ admin.error}}
+        {{{admin.error_msg}}}</p>{{/ admin.error}}
         <h2 class="form-admin-heading">{{core.question}}
             <small>&dash;Admin</small>
         </h2>
@@ -69,31 +69,31 @@
             <input id="core.url" name="core_url" class="form-control" type="text" value="{{core.url}}" required>
         </div>
         {{# admin.show_template}}
-            <div class="form-group">
-                <label for="admin.template">{{admin.template_label}}</label>
-                <input id="admin.template" name="admin_template" class="form-control" type="text"
-                       value="{{admin.template}}"
-                       required>
-            </div>
+        <div class="form-group">
+            <label for="admin.template">{{admin.template_label}}</label>
+            <input id="admin.template" name="admin_template" class="form-control" type="text"
+                   value="{{admin.template}}"
+                   required>
+        </div>
         {{/ admin.show_template}}
         <div class="form-group">
             <label for="core.status">{{admin.status_label}}</label>
             <select class="form-control" id="core.status" name="core_status">
                 {{# admin.select_on }}
-                    <option value="true" selected>
-                        {{core.true.text}}
-                    </option>
-                    <option value="false">
-                        {{core.false.text}}
-                    </option>
+                <option value="true" selected>
+                    {{core.true.text}}
+                </option>
+                <option value="false">
+                    {{core.false.text}}
+                </option>
                 {{/ admin.select_on }}
                 {{# admin.select_off }}
-                    <option value="true">
-                        {{core.true.text}}
-                    </option>
-                    <option value="false" selected>
-                        {{core.false.text}}
-                    </option>
+                <option value="true">
+                    {{core.true.text}}
+                </option>
+                <option value="false" selected>
+                    {{core.false.text}}
+                </option>
                 {{/ admin.select_off }}
             </select>
         </div>

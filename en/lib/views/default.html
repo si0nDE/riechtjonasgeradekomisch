@@ -33,15 +33,15 @@
 </script>
 
 {{#core.tweetid}}
-    <script>
-        options = {
-            theme: 'light',
-            align: 'center',
-            lang: 'en'
-        };
+<script>
+    options = {
+        theme: 'light',
+        align: 'center',
+        lang: 'en'
+    };
 
-        twttr.widgets.createTweet('{{core.tweetid}}', document.getElementById('tweetembedded'), options);
-    </script>
+    twttr.widgets.createTweet('{{core.tweetid}}', document.getElementById('tweetembedded'), options);
+</script>
 {{/core.tweetid}}
 
 </html>

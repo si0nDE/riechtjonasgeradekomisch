@@ -8,7 +8,7 @@ In einer eigenen Verwaltung können Vorname und Twittername des komisch riechend
 ## Installation ##
 
 1. Lade alle Dateien und Ordner auf Deinen Webserver.
-2. Öffne den Admin-Bereich (_domain.tld/admin_) und bearbeite die Standardwerte nach deinen Bedürfnissen. Bitte denke daran, den Bereich mit einem [Verzeichniskennwort]() zu schützen!
+2. Öffne den Admin-Bereich (_domain.tld/admin_) und bearbeite die Standardwerte nach deinen Bedürfnissen. Bitte denke daran, den Bereich mit einem [Verzeichniskennwort](https://httpd.apache.org/docs/current/programs/htpasswd.html) zu schützen!
 3. Fertig! Besuche jetzt die Seite, klicke auf den Tweet-Button und teile Deinem Freund mit, dass er komisch riecht!
 
 ## Geplante Funktionen ##

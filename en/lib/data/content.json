@@ -31,7 +31,7 @@
     "true_long_label": "Content of tweet, if true:",
     "false_text_label": "Short answer, if false:",
     "false_long_label": "Content of tweet, if false:",
-    "tweet_id_label": "Tweet-ID for embedding a tweet (empty to disable)",
+    "tweet_id_label": "Tweet-ID for embedding a tweet (leave blank to disable)",
     "url_label": "Domain of tweet origin (eg. http:\/\/riechtjonasgeradekomisch.com)",
     "save_label": "Data has been saved!",
     "status_label": "Status:",

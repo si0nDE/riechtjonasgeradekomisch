@@ -7,6 +7,7 @@ function admin_template()
         return 'default';
     }
 }
+
 if (!empty($_POST)) {
     if ($_POST['core_status'] === 'true') {
         $status = true;
