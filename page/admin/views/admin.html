@@ -12,7 +12,8 @@
 <body>
 <div class="container">
     <form class="form-admin" action="save.php" method="post">
-        {{# admin.save}}<p class="alert alert-success"><span class="glyphicon glyphicon-ok"></span> {{language.admin.save_label}}
+        {{# admin.save}}<p class="alert alert-success"><span
+                class="glyphicon glyphicon-ok"></span> {{language.admin.save_label}}
         </p>{{/ admin.save}}
         {{# admin.error}}<p class="alert alert-danger"><span class="gylphicon gylphicon-remove"></span>
             {{{admin.error_msg}}}</p>{{/ admin.error}}
@@ -92,11 +93,30 @@
         {{# admin.show_template}}
             <div class="form-group">
                 <label for="admin.template">{{language.admin.template_label}}</label>
-                <input id="admin.template" name="admin_template" class="form-control" type="text"
-                       value="{{admin.template}}"
-                       required>
+                <div class="input-group">
+                    <span class="input-group-addon">lib/views/</span>
+                    <input id="admin.template" name="admin_template" class="form-control" type="text"
+                           value="{{admin.template}}"
+                           required>
+                    <span class="input-group-addon">.html</span>
+                </div>
             </div>
         {{/ admin.show_template}}
+        {{# admin.show_language}}
+            <div class="form-group">
+                <label for="admin.language">{{language.admin.language_label}}</label>
+                <div class="input-group">
+                    <span class="input-group-addon">lib/data/lang/</span>
+                    <input id="admin.language" name="admin_language" class="form-control" type="text"
+                           value="{{language.language_code}}"
+                           required>
+                    <span class="input-group-addon">.json</span>
+                </div>
+            </div>
+        {{/ admin.show_language}}
+        {{^ admin.show_language}}
+            <input type="hidden" name="admin_language" value="{{language.language_code}}">
+        {{/admin.show_language}}
         <div class="form-group">
             <label for="core.status">{{language.admin.status_label}}</label>
             <select class="form-control" id="core.status" name="core_status">
@@ -120,8 +140,6 @@
         </div>
         <button class="btn btn-lg btn-success " type="submit"><span class="glyphicon glyphicon-floppy-save"></span>&nbsp;{{language.admin.btn_label}}
         </button>
-
-        <input type="hidden" name="language_code" value="{{language.language_code}}">
     </form>
     <a class="btn btn-lg btn-primary" onclick="location.href='../'"><span class="glyphicon glyphicon-arrow-left"></span>
         {{language.admin.btn_back_label}}</a>

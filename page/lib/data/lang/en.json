@@ -18,6 +18,7 @@
     "save_label": "Data has been saved!",
     "status_label": "Status:",
     "button_label": "Edit",
-    "template_label": "Template file (without suffix)"
+    "template_label": "Template file (without suffix)",
+    "language_label": "Language file (without suffix)"
   }
 }

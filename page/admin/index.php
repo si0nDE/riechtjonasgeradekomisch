@@ -58,9 +58,25 @@ function scan_for_themes()
     }
 }
 
+function scan_for_languages(){
+    $directory = '../lib/data/lang';
+    $scanned_directory = array_diff(scandir($directory), array('..', '.'));
+    if (count($scanned_directory) >= 2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 if (scan_for_themes()) {
     $data->admin->show_template = true;
 }
+
+if(scan_for_languages()) {
+    $data->admin->show_language = true;
+}
+
+
 $data->admin->title = "admin@" . preg_replace('#^https?://#', '', $data->core->url);
 echo $m->render('admin', $data);
 session_destroy();

@@ -18,6 +18,7 @@
     "save_label": "Daten erfolgreich gespeichert!",
     "status_label": "Status-Anzeige:",
     "button_label": "Bearbeiten",
-    "template_label": "Template-Datei (ohne Dateiendung)"
+    "template_label": "Template-Datei (ohne Dateiendung)",
+    "language_label": "Sprach-Datei (ohne Dateiendung)"
   }
 }

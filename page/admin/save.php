@@ -38,7 +38,7 @@ if (!empty($_POST)) {
             'title' => 'admin@riechtjonasgeradekomisch.com',
             'tweet_theme' => $_POST['admin_tweet_theme'],
             'template' => admin_template(),
-            'lang' => $_POST['language_code']
+            'lang' => $_POST['admin_language']
         )
     );
     $json = json_encode($array);
