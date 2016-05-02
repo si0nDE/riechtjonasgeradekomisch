@@ -47,6 +47,7 @@ if (!empty($_POST)) {
             'false_text_label' => 'Kurze Antwort, wenn nicht zutreffend:',
             'false_long_label' => 'Text für Tweet, wenn nicht zutreffend:',
             'tweet_id_label' => "Tweet-ID für Embedded Tweet (leer zum Ausblenden)",
+            'tweet_theme' => $_POST['admin_tweet_theme'],
             'url_label' => 'Domain für Tweet (z.B. http://riechtjonasgeradekomisch.com)',
             'save_label' => 'Daten erfolgreich gespeichert!',
             'status_label' => 'Status-Anzeige:',
