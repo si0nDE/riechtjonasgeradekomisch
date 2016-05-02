@@ -13,6 +13,6 @@ In einer eigenen Verwaltung können Vorname und Twittername des komisch riechend
 
 ## Geplante Funktionen ##
 
-- [ ] Englische und Deutsche Version in eine einzelne zusammenfassen
+- [x] Englische und Deutsche Version in eine einzelne zusammenfassen
+- [ ] Volle Multilanguage Unterstützung
 - [ ] Setup für Erstellung der Konfigurationsdatei
-
