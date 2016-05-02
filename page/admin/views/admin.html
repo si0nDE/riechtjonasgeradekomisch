@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{admin.title}}</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+</head>
+<body>
+<div class="container">
+    <form class="form-admin" action="save.php" method="post">
+        {{# admin.save}}<p class="alert alert-success"><span
+                class="glyphicon glyphicon-ok"></span> {{language.admin.save_label}}
+        </p>{{/ admin.save}}
+        {{# admin.error}}<p class="alert alert-danger"><span class="gylphicon gylphicon-remove"></span>
+            {{{admin.error_msg}}}</p>{{/ admin.error}}
+        <h2 class="form-admin-heading">{{core.question}}
+            <small>&dash;Admin</small>
+        </h2>
+        <br>
+        <div class="form-group">
+            <label for="core.question">{{language.admin.question_label}}</label>
+            <input id="core.question" name="core_question" class="form-control" type="text" value="{{core.question}}"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="core.firstname">{{language.admin.firstname_label}}</label>
+            <input id="core.firstname" name="core_firstname" class="form-control" type="text" value="{{core.firstname}}"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="core.twitter.nick">{{language.admin.twitter_label}}</label>
+            <input id="core.twitter.nick" name="core_twitter_nick" class="form-control" type="text"
+                   value="{{core.twitter.nick}}" required>
+        </div>
+        <div class="form-group">
+            <label for="core.twitter.owner">{{language.admin.twitter_owner_label}}</label>
+            <input id="core.twitter.owner" name="core_twitter_owner" class="form-control" type="text"
+                   value="{{core.twitter.owner}}" required>
+        </div>
+        <div class="form-group has-success">
+            <label for="core.true.text">{{language.admin.true_text_label}}</label>
+            <input id="core.true.text" name="core_true_text" class="form-control" type="text" value="{{core.true.text}}"
+                   required>
+        </div>
+        <div class="form-group has-success">
+            <label for="core.true.long">{{language.admin.true_long_label}}</label>
+            <input id="core.true.long" name="core_true_long" class="form-control" type="text" value="{{core.true.long}}"
+                   required>
+        </div>
+        <div class="form-group has-error">
+            <label for="core.false.text">{{language.admin.false_text_label}}</label>
+            <input id="core.false.text" name="core_false_text" class="form-control" type="text"
+                   value="{{core.false.text}}" required>
+        </div>
+        <div class="form-group has-error">
+            <label for="core.false.long">{{language.admin.false_long_label}}</label>
+            <input id="core.false.long" name="core_false_long" class="form-control" type="text"
+                   value="{{core.false.long}}" required>
+        </div>
+        <div class="form-group">
+            <label for="core.tweetid">{{language.admin.tweet_id_label}}</label>
+            <input id="core.tweetid" name="core_tweetid" class="form-control" type="text" value="{{core.tweetid}}">
+        </div>
+        <div class="form-group">
+            <label for="admin.tweet_theme">{{language.admin.tweet_theme_label}}</label>
+            <select class="form-control" id="admin.tweet_theme" name="admin_tweet_theme">
+                {{# admin.tweet_theme_light }}
+                    <option value="light" selected>
+                        light
+                    </option>
+                    <option value="dark">
+                        dark
+                    </option>
+                {{/ admin.tweet_theme_light }}
+                {{# admin.tweet_theme_dark }}
+                    <option value="light">
+                        light
+                    </option>
+                    <option value="dark" selected>
+                        dark
+                    </option>
+                {{/ admin.tweet_theme_dark }}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="core.url">{{language.admin.url_label}}</label>
+            <input id="core.url" name="core_url" class="form-control" type="text" value="{{core.url}}" required>
+        </div>
+        {{# admin.show_template}}
+            <div class="form-group">
+                <label for="admin.template">{{language.admin.template_label}}</label>
+                <div class="input-group">
+                    <span class="input-group-addon">lib/views/</span>
+                    <input id="admin.template" name="admin_template" class="form-control" type="text"
+                           value="{{admin.template}}"
+                           required>
+                    <span class="input-group-addon">.html</span>
+                </div>
+            </div>
+        {{/ admin.show_template}}
+        {{# admin.show_language}}
+            <div class="form-group">
+                <label for="admin.language">{{language.admin.language_label}}</label>
+                <div class="input-group">
+                    <span class="input-group-addon">lib/data/lang/</span>
+                    <input id="admin.language" name="admin_language" class="form-control" type="text"
+                           value="{{language.language_code}}"
+                           required>
+                    <span class="input-group-addon">.json</span>
+                </div>
+            </div>
+        {{/ admin.show_language}}
+        {{^ admin.show_language}}
+            <input type="hidden" name="admin_language" value="{{language.language_code}}">
+        {{/admin.show_language}}
+        <div class="form-group">
+            <label for="core.status">{{language.admin.status_label}}</label>
+            <select class="form-control" id="core.status" name="core_status">
+                {{# admin.select_on }}
+                    <option value="true" selected>
+                        {{core.true.text}}
+                    </option>
+                    <option value="false">
+                        {{core.false.text}}
+                    </option>
+                {{/ admin.select_on }}
+                {{# admin.select_off }}
+                    <option value="true">
+                        {{core.true.text}}
+                    </option>
+                    <option value="false" selected>
+                        {{core.false.text}}
+                    </option>
+                {{/ admin.select_off }}
+            </select>
+        </div>
+        <button class="btn btn-lg btn-success " type="submit"><span class="glyphicon glyphicon-floppy-save"></span>&nbsp;{{language.admin.btn_label}}
+        </button>
+    </form>
+    <a class="btn btn-lg btn-primary" onclick="location.href='../'"><span class="glyphicon glyphicon-arrow-left"></span>
+        {{language.admin.btn_back_label}}</a>
+</div>
+<script type="application/javascript" src="js/jquery.js"></script>
+<script type="application/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
