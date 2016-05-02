@@ -65,6 +65,27 @@
             <input id="core.tweetid" name="core_tweetid" class="form-control" type="text" value="{{core.tweetid}}">
         </div>
         <div class="form-group">
+            <label for="admin.tweet_theme">{{admin.tweet_theme_label}}</label>
+            <select class="form-control" id="admin.tweet_theme" name="admin_tweet_theme">
+                {{# admin.tweet_theme_light }}
+                    <option value="light" selected>
+                        light
+                    </option>
+                    <option value="dark">
+                        dark
+                    </option>
+                {{/ admin.tweet_theme_light }}
+                {{# admin.tweet_theme_dark }}
+                    <option value="light">
+                        light
+                    </option>
+                    <option value="dark" selected>
+                        dark
+                    </option>
+                {{/ admin.tweet_theme_dark }}
+            </select>
+        </div>
+        <div class="form-group">
             <label for="core.url">{{admin.url_label}}</label>
             <input id="core.url" name="core_url" class="form-control" type="text" value="{{core.url}}" required>
         </div>

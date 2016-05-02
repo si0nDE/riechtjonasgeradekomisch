@@ -32,6 +32,8 @@
     "false_text_label": "Kurze Antwort, wenn nicht zutreffend:",
     "false_long_label": "Text f\u00fcr Tweet, wenn nicht zutreffend:",
     "tweet_id_label": "Tweet-ID f\u00fcr Embedded Tweet (leer zum Ausblenden)",
+    "tweet_theme_label": "Tweet Theme",
+    "tweet_theme": "light",
     "url_label": "Domain f\u00fcr Tweet (z.B. http:\/\/riechtjonasgeradekomisch.com)",
     "save_label": "Daten erfolgreich gespeichert!",
     "status_label": "Status-Anzeige:",
