@@ -1,8 +1,4 @@
-de/lib/Mustache/* linguist-vendored
-en/lib/Mustache/* linguist-vendored
-de/admin/css/*.min.css linguist-vendored
-en/admin/css/*.min.css linguist-vendored
-de/admin/js/*.min.js linguist-vendored
-en/admin/js/*.min.js linguist-vendored
-de/admin/fonts/* linguist-vendored
-en/admin/fonts/* linguist-vendored
+page/lib/Mustache/* linguist-vendored
+page/admin/css/*.min.css linguist-vendored
+page/admin/js/*.min.js linguist-vendored
+page/admin/fonts/* linguist-vendored
