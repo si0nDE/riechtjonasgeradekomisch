@@ -30,7 +30,7 @@ if ($data->core->status === true) {
 } else {
     $data->admin->select_off = true;
 }
-if ($data->admin->tweet_theme === 'dark') {
+if ($data->admin->tweet_theme == 'dark') {
     $data->admin->tweet_theme_dark = true;
 } else {
     $data->admin->tweet_theme_light = true;
