@@ -35,15 +35,15 @@
 </script>
 
 {{#core.tweetid}}
-<script>
-    options = {
-        theme: '{{admin.tweet_theme}}',
-        align: 'center',
-        lang: 'de'
-    };
+    <script>
+        options = {
+            theme: '{{admin.tweet_theme}}',
+            align: 'center',
+            lang: 'de'
+        };
 
-    twttr.widgets.createTweet('{{core.tweetid}}', document.getElementById('tweetembedded'), options);
-</script>
+        twttr.widgets.createTweet('{{core.tweetid}}', document.getElementById('tweetembedded'), options);
+    </script>
 {{/core.tweetid}}
 
 </html>
