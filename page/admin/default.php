@@ -20,7 +20,7 @@ function write_default()
     },
     "tweetid": false,
     "url": "http:\/\/riechtjonasgeradekomisch.com",
-    "version": "1.6.2"
+    "version": "1.6.3"
   },
   "admin": {
     "title": "admin@riechtjonasgeradekomisch.com",
