@@ -25,6 +25,10 @@ if (!isset($lang)) {
     // TODO: error language file not found
 }
 
+if (empty($lang)) {
+    // TODO: error language file empty
+}
+
 $data->language = $lang;
 
 // set status

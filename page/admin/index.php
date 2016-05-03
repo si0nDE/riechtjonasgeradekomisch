@@ -11,8 +11,12 @@ if (file_exists('../lib/data/lang/' . $langcode . '.json')) {
     $lang = json_decode(file_get_contents('../lib/data/lang/' . $langcode . '.json'));
 }
 $data->language = $lang;
-if (empty($lang)) {
+if (!isset($lang)) {
     // TODO: error language file not found
+}
+
+if (empty($lang)) {
+    // TODO: error language file empty
 }
 
 setcookie('admin', 'yes', time() + (60 * 30), '/');
