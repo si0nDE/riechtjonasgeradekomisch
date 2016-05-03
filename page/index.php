@@ -1,6 +1,18 @@
 <?php
+// Production-Mode | Errors still get reported in admin mode
+if (isset($_COOKIE['admin'])) {
+    error_reporting(E_ALL);
+} else {
+    error_reporting(0);
+}
+
 // get data-core from administrator
 $data = json_decode(file_get_contents('lib/data/content.json'));
+if (empty($data)) {
+    header('Content-Type: text/plain');
+    echo "Admin: Your data-core is faulty.\nPlease visit admin/ for emergency-rewrite.";
+    exit;
+}
 
 // get language
 $langcode = $data->admin->lang;
