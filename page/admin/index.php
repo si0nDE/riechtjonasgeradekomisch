@@ -1,24 +1,21 @@
 <?php
 $data = json_decode(file_get_contents('../lib/data/content.json'));
-
-$langcode = $data->admin->lang;
-if (file_exists('../lib/data/lang/' . $langcode . '.json')) {
-    $lang = json_decode(file_get_contents('../lib/data/lang/' . $langcode . '.json'));
-}
-
-if (!isset($lang)) {
-    // TODO: error language file not found
-}
-
-$data->language = $lang;
-
-setcookie('admin', 'yes', time() + (60 * 30), '/');
 if (empty($data)) {
     include 'default.php';
     if (write_default()) {
         header('Location: ./');
     }
 }
+$langcode = $data->admin->lang;
+if (file_exists('../lib/data/lang/' . $langcode . '.json')) {
+    $lang = json_decode(file_get_contents('../lib/data/lang/' . $langcode . '.json'));
+}
+$data->language = $lang;
+if (empty($lang)) {
+    // TODO: error language file not found
+}
+
+setcookie('admin', 'yes', time() + (60 * 30), '/');
 session_start();
 require_once '../lib/Mustache/Autoloader.php';
 Mustache_Autoloader::register();

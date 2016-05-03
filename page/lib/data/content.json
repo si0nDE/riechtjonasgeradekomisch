@@ -17,12 +17,12 @@
     },
     "tweetid": false,
     "url": "http:\/\/riechtjonasgeradekomisch.com",
-    "version": "1.6.1"
+    "version": "1.6.2"
   },
   "admin": {
     "title": "admin@riechtjonasgeradekomisch.com",
     "tweet_theme": "light",
     "template": "default",
-    "lang": "de"
+    "lang": "en"
   }
 }
