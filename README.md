@@ -14,5 +14,5 @@ In einer eigenen Verwaltung können Vorname und Twittername des komisch riechend
 ## Geplante Funktionen ##
 
 - [x] Englische und Deutsche Version in eine einzelne zusammenfassen
-- [ ] Volle multilinguale Unterstützung
+- [x] Volle multilinguale Unterstützung
 - [ ] Setup für Erstellung der Konfigurationsdatei
