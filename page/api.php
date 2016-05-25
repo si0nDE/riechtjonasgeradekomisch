@@ -15,6 +15,7 @@ function default_out()
     header('Content-Type: application/json');
     echo json_encode($array);
 }
+$_GET['format'] = "beer";
 
 if (isset($_GET['format'])) {
     if ($_GET['format'] === 'xml') {
@@ -53,9 +54,10 @@ if (isset($_GET['format'])) {
         $data = json_decode($data);
         $data = $data->core;
         $data = json_encode($data);
-        include 'lib/data/beer.php';
+        require 'lib/Beer/Beer.php';
+        $beer = new rauhkrusche\BeerPHP\Beer;
         header('Content-Type: text/plain Charset=UTF-8');
-        echo beer($data);
+        echo $beer->serialize($data);
     } else {
         default_out();
     }
