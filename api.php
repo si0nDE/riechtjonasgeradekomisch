@@ -15,7 +15,6 @@ function default_out()
     header('Content-Type: application/json');
     echo json_encode($array);
 }
-$_GET['format'] = "beer";
 
 if (isset($_GET['format'])) {
     if ($_GET['format'] === 'xml') {
