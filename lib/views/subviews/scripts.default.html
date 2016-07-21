@@ -5,7 +5,7 @@
         text: 'Yo {{core.firstname}}, {{core.twitter.long}} (@{{core.twitter.nick}})',
         via: '{{core.twitter.owner}}',
         size: 'large',
-        lang: '{{language.language_code}}',
+        lang: '{{language.language_code}}'
     };
 
     twttr.widgets.createShareButton('{{core.url}}', document.getElementById('tweet'), options);
