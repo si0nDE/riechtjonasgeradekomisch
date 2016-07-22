@@ -33,25 +33,29 @@ if (isset($_SESSION['error'])) {
         $data->admin->error_msg = $_SESSION['error_msg'];
     }
 }
+
 if (isset($_SESSION['success'])) {
     if ($_SESSION['success']) {
         $data->admin->save = true;
     }
 }
+
 if ($data->core->status === true) {
     $data->admin->select_on = true;
 } else {
     $data->admin->select_off = true;
 }
+
 if ($data->admin->tweet_theme == 'dark') {
     $data->admin->tweet_theme_dark = "selected";
 } else {
     $data->admin->tweet_theme_light = "selected";
 }
+
 function scan_for_themes()
 {
     $directory = '../lib/views';
-    $scanned_directory = array_diff(scandir($directory), array('..', '.'));
+    $scanned_directory = array_diff(scandir($directory), array('..', '.', 'subviews'));
     if (count($scanned_directory) >= 2) {
         return true;
     } else {
@@ -70,13 +74,9 @@ function scan_for_languages()
     }
 }
 
-if (scan_for_themes()) {
-    $data->admin->show_template = true;
-}
+$data->admin->show_template = scan_for_themes();
 
-if (scan_for_languages()) {
-    $data->admin->show_language = true;
-}
+$data->admin->show_language = scan_for_languages();
 
 
 $data->admin->title = "admin@" . preg_replace('#^https?://#', '', $data->core->url);
