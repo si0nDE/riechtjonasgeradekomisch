@@ -22,14 +22,11 @@ if (file_exists('lib/data/lang/' . $langcode . '.json')) {
 }
 
 if (!isset($lang)) {
-    // TODO: error language file not found
+    echo "Language file <i>". $langcode. ".json</i> not found!";
+    exit;
+} else {
+    $data->language = $lang;
 }
-
-if (empty($lang)) {
-    // TODO: error language file empty
-}
-
-$data->language = $lang;
 
 // set status
 if ($data->core->status) {

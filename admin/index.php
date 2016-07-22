@@ -10,13 +10,12 @@ $langcode = $data->admin->lang;
 if (file_exists('../lib/data/lang/' . $langcode . '.json')) {
     $lang = json_decode(file_get_contents('../lib/data/lang/' . $langcode . '.json'));
 }
-$data->language = $lang;
-if (!isset($lang)) {
-    // TODO: error language file not found
-}
 
-if (empty($lang)) {
-    // TODO: error language file empty
+if (!isset($lang)) {
+    echo "Language file <i>". $langcode. ".json</i> not found!";
+    exit;
+} else {
+    $data->language = $lang;
 }
 
 setcookie('admin', 'yes', time() + (60 * 30), '/');
