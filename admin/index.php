@@ -43,7 +43,7 @@ if (isset($_SESSION['success'])) {
     }
 }
 
-if ($data->core->status = true) {
+if ($data->core->status == true) {
     $data->admin->select_on = true;
 } else {
     $data->admin->select_off = true;

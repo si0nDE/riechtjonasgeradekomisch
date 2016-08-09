@@ -110,22 +110,12 @@
         <div class="form-group">
             <label for="core.status">{{language.admin.status_label}}</label>
             <select class="form-control" id="core.status" name="core_status">
-                {{# admin.select_on }}
-                    <option value="true" selected>
-                        {{core.true.text}}
-                    </option>
-                    <option value="false">
-                        {{core.false.text}}
-                    </option>
-                {{/ admin.select_on }}
-                {{# admin.select_off }}
-                    <option value="true">
-                        {{core.true.text}}
-                    </option>
-                    <option value="false" selected>
-                        {{core.false.text}}
-                    </option>
-                {{/ admin.select_off }}
+                <option value="true" {{# admin.select_on }}selected{{/admin.select_on}}>
+                    {{core.true.text}}
+                </option>
+                <option value="false" {{# admin.select_off }}selected{{/admin.select_off}}>
+                    {{core.false.text}}
+                </option>
             </select>
         </div>
         <button class="btn btn-lg btn-success " type="submit"><span class="glyphicon glyphicon-floppy-save"></span>&nbsp;{{language.admin.btn_label}}
