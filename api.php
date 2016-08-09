@@ -1,5 +1,6 @@
 <?php
 // API - for whatever dumb reason we need to have something like that
+// TODO: Change or alter $_GET with headers or $_POST
 function default_out()
 {
     $data = file_get_contents('lib/data/content.json');
