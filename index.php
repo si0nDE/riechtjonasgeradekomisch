@@ -7,10 +7,13 @@ if (isset($_COOKIE['admin'])) {
 }
 
 // get data-core from administrator
-$data = json_decode(file_get_contents('lib/data/content.json'));
+$data = "";
+if (file_exists('lib/data/content.json')) {
+    $data = json_decode(file_get_contents('lib/data/content.json'));
+}
 if (empty($data)) {
     header('Content-Type: text/plain');
-    echo "Admin: Your data-core is faulty.\nPlease visit admin/ for emergency-initialization!";
+    echo "Admin: Your data-core is faulty or has not been initialized yet.\nPlease visit admin/ for data-core-initialization!";
     exit;
 }
 

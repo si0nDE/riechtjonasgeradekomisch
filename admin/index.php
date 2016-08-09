@@ -1,18 +1,22 @@
 <?php
-$data = json_decode(file_get_contents('../lib/data/content.json'));
+$data = "";
+if (file_exists('../lib/data/content.json')) {
+    $data = json_decode(file_get_contents('../lib/data/content.json'));
+}
 if (empty($data)) {
     include 'default.php';
     if (write_default()) {
         header('Location: ./');
     }
 }
+
 $langcode = $data->admin->lang;
 if (file_exists('../lib/data/lang/' . $langcode . '.json')) {
     $lang = json_decode(file_get_contents('../lib/data/lang/' . $langcode . '.json'));
 }
 
 if (!isset($lang)) {
-    echo "Language file <i>". $langcode. ".json</i> not found!";
+    echo "Language file <i>" . $langcode . ".json</i> not found!";
     exit;
 } else {
     $data->language = $lang;
