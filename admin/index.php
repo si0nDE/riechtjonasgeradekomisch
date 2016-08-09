@@ -81,8 +81,8 @@ $data->admin->show_template = scan_for_themes();
 
 $data->admin->show_language = scan_for_languages();
 
-
 $data->admin->title = "admin@" . preg_replace('#^https?://#', '', $data->core->url);
+
 echo $m->render('admin', $data);
 session_destroy();
 exit;

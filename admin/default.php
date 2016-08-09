@@ -19,8 +19,7 @@ function write_default()
       "long": "what\'s going on? You don\'t smell weird anymore!"
     },
     "tweetid": false,
-    "url": "http:\/\/riechtjonasgeradekomisch.com",
-    "version": "1.6.3"
+    "url": "http:\/\/riechtjonasgeradekomisch.com"
   },
   "admin": {
     "title": "admin@riechtjonasgeradekomisch.com",

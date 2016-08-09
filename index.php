@@ -43,6 +43,10 @@ if ($data->core->status) {
 if (isset($_COOKIE['admin'])) {
     $data->admin->button = true;
 };
+
+// version
+$data->core->version = "1.6.6";
+
 // call the power of mustaches
 require_once 'lib/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
