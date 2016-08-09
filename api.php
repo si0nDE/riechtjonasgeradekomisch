@@ -66,6 +66,15 @@ if (isset($_GET['format'])) {
         $beer = new rauhkrusche\BeerPHP\Beer;
         header('Content-Type: text/plain Charset=UTF-8');
         echo $beer->serialize($data);
+    }elseif ($_GET['format'] === '🍻') {
+        $data = file_get_contents('lib/data/content.json');
+        $data = json_decode($data);
+        $data = $data->core;
+        $data = json_encode($data);
+        require 'lib/Beer/Beer.php';
+        $beer = new rauhkrusche\BeerPHP\Beer;
+        header('Content-Type: text/plain Charset=UTF-8');
+        echo $beer->serialize($data);
     }
     else {
         default_out();

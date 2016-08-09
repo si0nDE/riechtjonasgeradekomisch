@@ -10,7 +10,7 @@ if (isset($_COOKIE['admin'])) {
 $data = json_decode(file_get_contents('lib/data/content.json'));
 if (empty($data)) {
     header('Content-Type: text/plain');
-    echo "Admin: Your data-core is faulty.\nPlease visit admin/ for emergency-rewrite.";
+    echo "Admin: Your data-core is faulty.\nPlease visit admin/ for emergency-initialization!";
     exit;
 }
 
