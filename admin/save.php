@@ -32,8 +32,7 @@ if (!empty($_POST)) {
                 'text' => $_POST['core_false_text'],
                 'long' => $_POST['core_false_long']
             ),
-            'url' => $_POST['core_url'],
-            'version' => '1.6.4'),
+            'url' => $_POST['core_url'],),
         'admin' => array(
             'title' => 'admin@riechtjonasgeradekomisch.com',
             'tweet_theme' => $_POST['admin_tweet_theme'],
