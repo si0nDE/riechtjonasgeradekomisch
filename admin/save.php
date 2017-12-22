@@ -1,4 +1,8 @@
 <?php
+if(empty($_COOKIE['admin'])) {
+    header('Location: ./');
+    die();
+}
 function admin_template()
 {
     if (!empty($_POST['admin_template'])) {
