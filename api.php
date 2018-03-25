@@ -1,6 +1,6 @@
 <?php
+require 'vendor/autoload.php';
 // API - for whatever dumb reason we need to have something like that
-// TODO: Change or alter $_GET with headers or $_POST
 function default_out()
 {
     $data = file_get_contents('lib/data/content.json');
@@ -58,7 +58,6 @@ if (isset($_GET['format'])) {
             $data = json_decode($data);
             $data = $data->core;
             $data = json_encode($data);
-            require 'lib/Beer/Beer.php';
             $beer = new rauhkrusche\BeerPHP\Beer;
             header('Content-Type: text/plain Charset=UTF-8');
             echo $beer->serialize($data);

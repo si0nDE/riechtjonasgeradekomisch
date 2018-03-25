@@ -1,4 +1,5 @@
 <?php
+require '../vendor/autoload.php';
 $data = "";
 if (file_exists('../lib/data/content.json')) {
     $data = json_decode(file_get_contents('../lib/data/content.json'));
@@ -24,7 +25,7 @@ if (!isset($lang)) {
 
 setcookie('admin', 'yes', time() + (60 * 30), '/');
 session_start();
-require_once '../lib/Mustache/Autoloader.php';
+
 Mustache_Autoloader::register();
 $m = new Mustache_Engine(array(
     'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/views', array('extension' => '.html'))

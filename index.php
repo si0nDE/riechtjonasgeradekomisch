@@ -1,4 +1,5 @@
 <?php
+require 'vendor/autoload.php';
 // Production-Mode | Errors still get reported in admin mode
 if (isset($_COOKIE['admin'])) {
     error_reporting(E_ALL);
@@ -45,10 +46,9 @@ if (isset($_COOKIE['admin'])) {
 };
 
 // version
-$data->core->version = "1.6.7";
+$data->core->version = "1.7.0";
 
 // call the power of mustaches
-require_once 'lib/Mustache/Autoloader.php';
 Mustache_Autoloader::register();
 $m = new Mustache_Engine(array(
     'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__) . '/lib/views', array('extension' => '.html')),
