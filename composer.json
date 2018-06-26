@@ -1,6 +1,7 @@
 {
   "require": {
     "mustache/mustache": "v2.12.0",
-    "rauhkrusche/beer-php": "v0.2"
+    "rauhkrusche/beer-php": "v0.2",
+    "stil/gd-text": "dev-master"
   }
 }

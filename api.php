@@ -1,5 +1,9 @@
 <?php
 require 'vendor/autoload.php';
+
+use GDText\Box;
+use GDText\Color;
+
 // API - for whatever dumb reason we need to have something like that
 function default_out()
 {
@@ -10,7 +14,7 @@ function default_out()
         'msg' => 'Everything working fine, thank you for asking. :^)',
         'core' => $data->core,
         'api' => array(
-            'version' => '0.3'
+            'version' => '0.5'
         )
     );
     header('Content-Type: application/json');
@@ -56,11 +60,42 @@ if (isset($_GET['format'])) {
         case '🍻':
             $data = file_get_contents('lib/data/content.json');
             $data = json_decode($data);
-            $data = $data->core;
-            $data = json_encode($data);
             $beer = new rauhkrusche\BeerPHP\Beer;
+            $array = array(
+                'code' => '1337',
+                'msg' => 'Everything working fine, thank you for asking. :^)',
+                'core' => $data->core,
+                'api' => array(
+                    'version' => '0.5'
+                )
+            );
             header('Content-Type: text/plain Charset=UTF-8');
-            echo $beer->serialize($data);
+            echo $beer->serialize(json_encode($array));
+            break;
+        case 'img':
+        case 'image':
+            $data = json_decode(file_get_contents('lib/data/content.json'));
+            $text = "";
+            if ($data->core->status) {
+                $text = $data->core->true->text;
+            } else {
+                $text = $data->core->false->text;
+            }
+
+            $im = imagecreate('1400', '1400');
+            $backgroundcolor = imagecolorallocate($im, 0, 0, 0);
+            imagefill($im, 0, 0, $backgroundcolor);
+
+            $box = new Box($im);
+            $box->setFontFace(__DIR__ . '/admin/fonts/arial.ttf');
+            $box->setFontColor(new Color(255, 255, 255));
+            $box->setFontSize(500);
+            $box->setBox(20, 20, 1300, 1300);
+            $box->setTextAlign('center', 'center');
+            $box->draw($text);
+
+            header('Content-Type: image/png');
+            imagepng($im);
             break;
         default:
             default_out();
