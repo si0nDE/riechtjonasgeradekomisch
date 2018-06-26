@@ -46,7 +46,7 @@ if (isset($_COOKIE['admin'])) {
 };
 
 // version
-$data->core->version = "1.7.0";
+$data->core->version = "1.8.0";
 
 // call the power of mustaches
 Mustache_Autoloader::register();
