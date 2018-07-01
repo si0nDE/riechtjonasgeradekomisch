@@ -9,12 +9,13 @@ function default_out()
 {
     $data = file_get_contents('lib/data/content.json');
     $data = json_decode($data);
+    $data->core->lang = $data->admin->lang;
     $array = array(
         'code' => '1337',
         'msg' => 'Everything working fine, thank you for asking. :^)',
         'core' => $data->core,
         'api' => array(
-            'version' => '0.5'
+            'version' => '0.6'
         )
     );
     header('Content-Type: application/json');
@@ -26,6 +27,7 @@ if (isset($_GET['format'])) {
         case 'xml':
             $data = file_get_contents('lib/data/content.json');
             $data = json_decode($data, true);
+            $data['core']['lang'] = $data['admin']['lang'];
             $data_export = $data['core'];
             if ($data_export['status']) {
                 $data_export['status'] = 'true';
@@ -60,13 +62,14 @@ if (isset($_GET['format'])) {
         case '🍻':
             $data = file_get_contents('lib/data/content.json');
             $data = json_decode($data);
+            $data->core->lang = $data->admin->lang;
             $beer = new rauhkrusche\BeerPHP\Beer;
             $array = array(
                 'code' => '1337',
                 'msg' => 'Everything working fine, thank you for asking. :^)',
                 'core' => $data->core,
                 'api' => array(
-                    'version' => '0.5'
+                    'version' => '0.6'
                 )
             );
             header('Content-Type: text/plain Charset=UTF-8');
