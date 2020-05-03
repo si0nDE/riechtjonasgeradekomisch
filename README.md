@@ -10,7 +10,7 @@ Freundes (also Dir) eingerichtet werden.
 ## Installation ##
 
 1. Lade alle Dateien und Ordner auf Deinen Webserver.
-2. Installiere die benötigten Abhängigkeiten (`php composer.phar install`).
+2. Installiere die benötigten Abhängigkeiten (`cd /path/to/riechtjonasgeradekomisch; composer install`).
 3. Öffne den Admin-Bereich (_domain.tld/admin_) und bearbeite die Standardwerte nach deinen Bedürfnissen. Bitte denke
 daran, den Bereich mit einem [Verzeichniskennwort](https://httpd.apache.org/docs/current/programs/htpasswd.html) zu schützen!
 4. Fertig! Besuche jetzt die Seite, klicke auf den Tweet-Button und teile Deinem Freund mit, dass er komisch riecht!
