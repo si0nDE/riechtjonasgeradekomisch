@@ -12,10 +12,10 @@
     <meta property="og:image:type" content="image/png">
 </head>
 <body>
-<div id="tweet"></div>
+<div id="tweet">{{{core.tweet_button}}}</div>
 <div id="top">{{core.question}}</div>
 <div id="main">{{core.answer}}</div>
-<div id="tweetembedded"></div>
+{{#core.tweetid}}<div class="embed">{{{core.tweet.html}}}</div>{{/core.tweetid}}
 <footer>
     <p>Made by <a target="_blank" href="https://twitter.com/manchmalfieber">@manchmalfieber</a><br>
         Extended by <a target="_blank" href="https://twitter.com/aledjonesworld">@aledjonesworld</a> &amp; <a

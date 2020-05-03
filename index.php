@@ -26,7 +26,7 @@ if (file_exists('lib/data/lang/' . $langcode . '.json')) {
 }
 
 if (!isset($lang)) {
-    echo "Language file <i>". $langcode. ".json</i> not found!";
+    echo "Language file <i>" . $langcode . ".json</i> not found!";
     exit;
 } else {
     $data->language = $lang;
@@ -47,6 +47,47 @@ if (isset($_COOKIE['admin'])) {
 
 // version
 $data->core->version = "1.8.2";
+
+// get embedded tweet
+if ($data->core->tweetid != false) {
+    $GuzzleClient = new GuzzleHttp\Client(['base_uri' => 'https://publish.twitter.com']);
+    try {
+        $response = $GuzzleClient->get("/oembed", [
+            'query' => [
+                'url' => 'https://twitter.com/' . $data->core->twitter->nick . '/status/' . $data->core->tweetid,
+                'dnt' => 'true',
+                'theme' => $data->admin->tweet_theme,
+                'lang' => $data->language->language_code,
+                'align' => 'center'
+            ]
+        ]);
+
+        $data->core->tweet = json_decode($response->getBody());
+    } catch (Exception $exception) {
+        $data->core->tweet = false;
+    }
+}
+
+// create tweet button reference
+function getTweetButton($input)
+{
+    $owner = $input->core->twitter->owner;
+    $firstname = $input->core->firstname;
+    $nick = $input->core->twitter->nick;
+    $pageUrl = $input->core->url;
+    $language = $input->language->language_code;
+    $text = urlencode('Yo ' . $firstname . ', ' . $input->core->twitter->long.' (@'.$nick.')');
+
+    return sprintf(
+        '<a class="twitter-share-button"
+                    href="https://twitter.com/intent/tweet?text=%s&via=%s&url=%s"
+                    data-size="large"
+                    data-lang="%s">
+                    Tweet</a>',$text,$owner,$pageUrl,$language
+    );
+}
+
+$data->core->tweet_button = getTweetButton($data);
 
 // call the power of mustaches
 Mustache_Autoloader::register();

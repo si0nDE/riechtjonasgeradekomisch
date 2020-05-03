@@ -1,7 +1,7 @@
 body {
     background-color: #000;
     color: #fff;
-    font-family: arial, helvetica;
+    font-family: arial, helvetica, sans-serif;
     font-size: 5em;
     text-align: center;
 }
@@ -19,7 +19,7 @@ a {
 }
 
 div {
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 div#main {
@@ -41,4 +41,9 @@ div#tweet {
     position: fixed;
     top: 10px;
     left: 10px;
+    font-size: 12pt !important;
+}
+
+blockquote {
+    font-size: 9pt;
 }
