@@ -46,7 +46,7 @@ if (isset($_COOKIE['admin'])) {
 };
 
 // version
-$data->core->version = "1.8.2";
+$data->core->version = "1.9";
 
 // get embedded tweet
 if ($data->core->tweetid != false) {
